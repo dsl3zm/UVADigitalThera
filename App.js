@@ -1,10 +1,12 @@
 import React from 'react';
 import MapView from 'react-native-maps';
 import * as Location from 'expo-location';
+import * as TaskManager from 'expo-task-manager';
 import * as Permissions from 'expo-permissions';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
 
 export default class App extends React.Component {
+
   state = {
     location: {},
     errorMessage: '',
@@ -26,6 +28,7 @@ export default class App extends React.Component {
     },
   }
   _getLocation = async () => {
+
     const { status } = await Permissions.askAsync(Permissions.LOCATION);
 
     if(status !== "granted") {
@@ -41,7 +44,12 @@ export default class App extends React.Component {
     this.setState({
       location,
     })
+    const temp = await Location.startLocationUpdatesAsync(LOCATION_TASK_NAME, {
+      accuracy: Location.Accuracy.Balanced,
+    });
   }
+
+
   render() {
     return (
       <View style={styles.container}>          
@@ -99,6 +107,21 @@ export default class App extends React.Component {
     );
   }
 }
+
+TaskManager.defineTask("geofencing", ({ data: { eventType, region }, error }) => {
+      if (error) {
+        // check `error.message` for more details.
+        return;
+      }
+      console.log('geofencing')
+      if (eventType === Location.GeofencingEventType.Enter) {
+        alert("enter in region!")
+        console.log("You've entered region:", region);
+      } else if (eventType === Location.GeofencingEventType.Exit) {
+        console.log("You've left region:", region);
+      }
+    });
+  
 
 
 const styles = StyleSheet.create({
