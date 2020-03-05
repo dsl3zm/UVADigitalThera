@@ -10,6 +10,8 @@ import {
 import Map from './components/Map'
 import NavBar from './components/NavBar'
 
+import * as Font from 'expo-font'
+
 function HomeMap({ navigation }) {
   return (
     <View style={{ }}>
@@ -57,7 +59,12 @@ function MyDrawer() {
 }
 
 export default function App() {
-  return (
+  componentDidMount(); {
+    Font.loadAsync({
+      'open-sans-light': require('./assets/fonts/OpenSans-Light.ttf'),
+    });
+  }
+  return (  
     <NavigationContainer>
       <MyDrawer />
     </NavigationContainer>
