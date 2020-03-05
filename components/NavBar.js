@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import * as Font from 'expo-font';
 
 
 const NavBar = props => (
@@ -47,7 +48,7 @@ const styles = StyleSheet.create({
     title:{
         color:'white',
         fontSize: 30,
-        fontFamily:"HelveticaNeue-Light"
+        fontFamily:"open-sans-light"
 
     }
   
