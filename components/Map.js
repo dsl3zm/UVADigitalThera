@@ -1,9 +1,12 @@
 import React from 'react';
 import MapView from 'react-native-maps';
-import { StyleSheet, Text, View, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, Dimensions,Button, Switch } from 'react-native';
+import * as Location from 'expo-location';
+import * as Permissions from 'expo-permissions';
 
 const Map = () => (
           <View style={styles.container}>
+
             <MapView style={styles.mapStyle} 
               initialRegion={{
                 latitude: 38.0289396,
@@ -22,6 +25,7 @@ const Map = () => (
             
           </View>
 )
+
 export default Map;
 
 const styles = StyleSheet.create({
@@ -34,6 +38,7 @@ const styles = StyleSheet.create({
     mapStyle: {
       width: Dimensions.get('window').width,
       height: Dimensions.get('window').height,
+
     },
   });
   
