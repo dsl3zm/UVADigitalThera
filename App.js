@@ -4,7 +4,9 @@ import * as Location from 'expo-location';
 import * as TaskManager from 'expo-task-manager';
 import * as Permissions from 'expo-permissions';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
-
+//38.0374763,-78.5093382 memgym
+//38.0509325,-78.5153235 northgrounds
+//38.032896,-78.5156337 afc
 export default class App extends React.Component {
 
   state = {
