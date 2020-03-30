@@ -16,6 +16,7 @@ export default class Login extends Component {
   render() {
     return (
         <View style={styles.container}>
+            
             <View style={styles.fullLogo}>
                 <Image
                 style={styles.tinyLogo}
