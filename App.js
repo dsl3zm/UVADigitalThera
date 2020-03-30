@@ -24,9 +24,21 @@ export default class App extends React.Component {
       latitude: 38.034795,
       longitude: -78.515122
     },
-    F4: {
+    F4: { //mem
       latitude: 38.035689,
       longitude: -78.510586
+    },
+    F5: { //northgrounds
+      latitude: 38.0374763,
+      longitude: -78.5093382
+    },
+    F6: { //afc
+      latitude: 38.0509325,
+      longitude: -78.5153235
+    },
+    F7: {
+      latitude: 38.032896,
+      longitude: -78.5156337
     },
   }
   _getLocation = async () => {
