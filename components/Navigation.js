@@ -11,28 +11,8 @@ import {
 import Map from './Map'
 import Test from './Test'
 import Login from './Login'
+import HomeMap from '../screens/HomeMap' 
 
-const HomeMap = ({ navigation }) => (
-
-    <View style={{ width:'100%',height:'100%' }}>
-      <NavBar title='HomeMap'/>
-      <Map/>
-      <Button style={{position:'absolute', }} title="Open drawer" onPress={() => navigation.openDrawer()} />
-      <Button title="Toggle drawer" onPress={() => navigation.toggleDrawer()} />
-    </View>
-);
-
-
-
-const NavBar = (props) => (
-  <View style={styles.container}> 
-      <View style={styles.bar}>
-          <Ionicons name="ios-menu" color="white" size={50}  onPress={() => navigation.openDrawer()}/>
-          <Text style={styles.title}>{props.title}</Text>
-          {/* <Button title="Toggle drawer" onPress={() => navigation.toggleDrawer()} /> */}
-      </View>
-  </View>
-)
 
 const Notifications = () => (
 
@@ -70,8 +50,6 @@ const MyDrawer = () => (
     </Drawer.Navigator>
   
 )
-
-
 
 const Navigation = props =>(
     <NavigationContainer>
