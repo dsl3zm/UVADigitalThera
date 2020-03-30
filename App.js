@@ -12,15 +12,15 @@ export default class App extends React.Component {
   state = {
     location: {},
     errorMessage: '',
-    F1: {
+    F1: { //runk
       latitude: 38.0289396,
       longitude: -78.5210302
     },
-    F2: {
+    F2: { //newc
       latitude: 38.035797,
       longitude: -78.506712
     },
-    F3: {
+    F3: { //ohill
       latitude: 38.034795,
       longitude: -78.515122
     },
