@@ -9,7 +9,7 @@ export default function NavBar(props){
 
    return(<View style={styles.container}> 
        <View style={styles.bar}>
-           <Ionicons name="ios-menu" color="white" size={50}  onPress={() => props.navigation.openDrawer()}/>
+           <Ionicons name="ios-menu" color="white" size={50} style={styles.icon}  onPress={() => props.navigation.openDrawer()}/>
            <Text style={styles.title}>{props.title}</Text>
            {/* <Button title="Toggle drawer" onPress={() => navigation.toggleDrawer()} /> */}
        </View>
@@ -20,13 +20,14 @@ export default function NavBar(props){
 const styles = StyleSheet.create({
 
     container: {
-        backgroundColor: 'orange',
+        backgroundColor: '#FC5A1C',
         color: 'white',
         width: Dimensions.get('window').width,
         height: Dimensions.get('window').height/7.5,
         top: 0,
         display: 'flex',
-        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'center',
         zIndex: 99999,
     },
     bar:{
@@ -43,8 +44,11 @@ const styles = StyleSheet.create({
     title:{
         color:'white',
         fontSize: 30,
-
-
+    },
+    icon:{
+        position: 'absolute',
+        left: 20
     }
+    
   
   });

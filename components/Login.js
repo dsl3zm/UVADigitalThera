@@ -6,7 +6,7 @@ export default class Login extends Component {
 
     state = {
         email: '',
-        passwprd: '',
+        password: '',
     };
     onLogin() {
         const {email,password} = this.state;
