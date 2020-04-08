@@ -12,7 +12,7 @@ import {
 import Login from './Login'
 import HomeMap from '../screens/HomeMap' 
 import Notifications from '../screens/Notifications'
-import Test from '../screens/Test'
+import Breathe from '../screens/Breathe'
 import HowItWorks from '../screens/HowItWorks'
 
 
@@ -41,7 +41,7 @@ const MyDrawer = () => (
     <Drawer.Navigator drawerContent={props => CustomDrawerContent(props)}>
       <Drawer.Screen name="HomeMap" component={HomeMap} />
       <Drawer.Screen name="Notifications" component={Notifications} />
-      <Drawer.Screen name="Test" component={Test} />
+      <Drawer.Screen name="Breathe" component={Breathe} />
       <Drawer.Screen name="Login" component={Login}/>
       <Drawer.Screen name = "HowItWorks" component={HowItWorks}/>
     </Drawer.Navigator>
