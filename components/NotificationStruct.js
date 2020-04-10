@@ -1,5 +1,6 @@
 import React from 'react';
-import { Text, View, Button, Vibration, Platform } from 'react-native';
+import { Text, View, Vibration, Platform } from 'react-native';
+import { Button, Card, Title, Paragraph } from 'react-native-paper';
 import { Notifications } from 'expo';
 import * as Permissions from 'expo-permissions';
 import Constants from 'expo-constants'
@@ -86,10 +87,10 @@ export default class NotificationStruct extends React.Component {
           justifyContent: 'space-around',
         }}>
         <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-          <Text>Origin: {this.state.notification.origin}</Text>
-          <Text>Data: {JSON.stringify(this.state.notification.data)}</Text>
+          <Title>Status: {this.state.notification.origin}</Title>
+          <Paragraph>Data: {JSON.stringify(this.state.notification.data)}</Paragraph>
         </View>
-        <Button title={'Press to Send Notification'} onPress={() => this.sendPushNotification()} />
+        <Button mode='outlined' onPress={() => this.sendPushNotification()}> Press to send reminder </Button>
       </View>
     );
   }

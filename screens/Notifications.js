@@ -12,10 +12,9 @@ export default function Notifications(props){
 
     return(
 
-    <View style={{ width:'100%',height:'100%' }}>
+    <View style={{ flex: 2, width:'100%', justifyContent: 'space-around', alignItems: 'center', alignSelf: 'auto' }}>
         <NavBar title='Notifications' navigation = {props.navigation }/>
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text>Notifications Screen</Text>
+        <View style={{ flex: 2, height:'50%', justifyContent: 'flex-end', alignSelf: 'auto', alignContent: 'flex-end'}}> 
             <PushNotification/>
        </View>
     </View>
