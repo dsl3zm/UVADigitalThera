@@ -15,8 +15,6 @@ export default function Notifications(props){
         <NavBar title='Notifications' navigation = {props.navigation }/>
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <Text>Notifications Screen</Text>
-            <Text>Origin: {this.state.notification.origin}</Text>
-            <Text>Data: {JSON.stringify(this.state.notification.data)}</Text>
             <PushNotification/>
        </View>
     </View>
