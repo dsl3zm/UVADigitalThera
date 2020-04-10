@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, StyleSheet, View, Button } from 'react-native';
 //import { Notifications } from 'expo';
 import NavBar from './NavBar'
+import Timer from '../components/Timer'
 import PushNotification from '../components/NotificationStruct';
 import Map from '../components/Map'
 

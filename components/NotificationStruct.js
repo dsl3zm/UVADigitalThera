@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View, Button, Vibration, Platform } from 'react-native';
 import { Notifications } from 'expo';
 import * as Permissions from 'expo-permissions';
-import Constants from 'expo-constants';
+import Constants from 'expo-constants'
 
 export default class NotificationStruct extends React.Component {
   state = {
@@ -61,9 +61,9 @@ export default class NotificationStruct extends React.Component {
     const message = {
       to: this.state.expoPushToken,
       sound: 'default',
-      title: 'Original Title',
-      body: 'And here is the body!',
-      data: { data: 'goes here' },
+      title: 'Breathing Reminder',
+      body: 'Make sure to take time to relax!',
+      data: { data: 'User info' },
       _displayInForeground: true,
     };
     const response = await fetch('https://exp.host/--/api/v2/push/send', {
