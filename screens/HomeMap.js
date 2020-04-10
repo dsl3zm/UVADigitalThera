@@ -6,7 +6,7 @@ import Map from '../components/Map'
 
 export default function HomeMap(props){
    //Works just like a regular fucntion ex: 
-   console.log(props)
+   //console.log(props)
 
 
     return(
