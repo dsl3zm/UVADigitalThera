@@ -4,6 +4,7 @@ import NavBar from './NavBar'
 import { Audio } from 'expo-av';
 import { Ionicons } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import CountDown from 'react-native-countdown-component';
 
 export default function Breathe(props){
 
@@ -30,6 +31,16 @@ playSound = async () => {
           </TouchableOpacity>
           <Image source={{uri: 'https://media.giphy.com/media/krP2NRkLqnKEg/giphy.gif'}} style={styles.gif} />
         </View>
+
+      <CountDown
+        until={120}
+        size={30}
+        onFinish={() => alert('Finished')}
+        digitStyle={{backgroundColor: '#A2C8C8'}}
+        digitTxtStyle={{color: '#FFF'}}
+        timeToShow={['M', 'S']}
+        timeLabels={{m: 'Min', s: 'Sec'}}
+      />
     </View>
     )
        
