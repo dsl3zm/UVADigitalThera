@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet,View, Button, Dimensions, Text } from 'react-native';
+import { Platform, StyleSheet, View, Button, Dimensions, Text } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 
@@ -9,7 +9,11 @@ export default function NavBar(props){
 
    return(<View style={styles.container}> 
        <View style={styles.bar}>
-           <Ionicons name="ios-menu" color="white" size={50} style={styles.icon}  onPress={() => props.navigation.openDrawer()}/>
+           <Ionicons   
+           name={Platform.select({
+            ios: 'ios-menu',
+            android: 'md-menu',
+            })} color="white" size={50} style={styles.icon}  onPress={() => props.navigation.openDrawer()}/>
            <Text style={styles.title}>{props.title}</Text>
            {/* <Button title="Toggle drawer" onPress={() => navigation.toggleDrawer()} /> */}
        </View>

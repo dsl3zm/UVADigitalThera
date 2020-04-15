@@ -80,7 +80,7 @@ export default class Map extends React.Component {
                 fillColor = { 'rgba(230,238,255,0.5)' }                
            />
            <MapView.Circle
-                key = { (38.0289396 + -78.5210302).toString() }
+                key = { (38.034795 + -78.515122).toString() }
                 center = { this.state.F3 }
                 radius = { 20 }
                 strokeWidth = { 1 }
@@ -88,7 +88,7 @@ export default class Map extends React.Component {
                 fillColor = { 'rgba(230,238,255,0.5)' }                
             />
            <MapView.Circle
-                key = { (38.0289396 + -78.5210302).toString() }
+                key = { (38.035689 + -78.510586).toString() }
                 center = { this.state.F4 }
                 radius = { 20 }
                 strokeWidth = { 1 }
