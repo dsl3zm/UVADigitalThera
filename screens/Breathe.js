@@ -52,18 +52,17 @@ playSound = async () => {
 
 const styles = StyleSheet.create({
 
+
   gif:{
     width: '80%',
     height: '60%',
+    borderRadius: 16,
+
   },
+    
   button: {
     paddingBottom: 60
 
   }
-
-
-
-
-
 
 });
