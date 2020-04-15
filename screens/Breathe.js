@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Switch, Text, Image} from 'react-native';
+import { View, StyleSheet, Switch, Text, Image, ImageBackground} from 'react-native';
 import NavBar from './NavBar'
 import { Audio } from 'expo-av';
 import { Ionicons } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import CountDown from 'react-native-countdown-component';
+import Background from '../assets/calm_water.jpg';
 
 export default function Breathe(props){
 
@@ -24,6 +25,7 @@ playSound = async () => {
   return(
     
     <View style={{ width:'100%',height:'100%' }}>
+      <ImageBackground source={Background} style={{width: '100%', height: '100%'}}>
         <NavBar title='Breathing' navigation = {props.navigation }/>
         <View style={{ justifyContent: 'center', alignItems: 'center' }}>
           <TouchableOpacity>
@@ -35,12 +37,13 @@ playSound = async () => {
       <CountDown
         until={120}
         size={30}
-        onFinish={() => alert('Finished')}
+        onFinish={() => alert('Breathing Complete')}
         digitStyle={{backgroundColor: '#A2C8C8'}}
         digitTxtStyle={{color: '#FFF'}}
         timeToShow={['M', 'S']}
         timeLabels={{m: 'Min', s: 'Sec'}}
       />
+        </ImageBackground>
     </View>
     )
        
