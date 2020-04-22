@@ -39,9 +39,9 @@ const Drawer = createDrawerNavigator();
 const MyDrawer = () => (
 
     <Drawer.Navigator drawerContent={props => CustomDrawerContent(props)}>
+      <Drawer.Screen name="Breathe" component={Breathe} />
       <Drawer.Screen name="HomeMap" component={HomeMap} />
       <Drawer.Screen name="Notifications" component={Notifications} />
-      <Drawer.Screen name="Breathe" component={Breathe} />
       <Drawer.Screen name="Login" component={Login}/>
       <Drawer.Screen name = "HowItWorks" component={HowItWorks}/>
     </Drawer.Navigator>

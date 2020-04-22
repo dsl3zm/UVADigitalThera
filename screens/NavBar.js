@@ -24,7 +24,7 @@ export default function NavBar(props){
 const styles = StyleSheet.create({
 
     container: {
-        backgroundColor: '#FC5A1C',
+        backgroundColor: '#0000FF',
         color: 'white',
         width: Dimensions.get('window').width,
         height: Dimensions.get('window').height/7.5,
@@ -35,7 +35,8 @@ const styles = StyleSheet.create({
         zIndex: 99999,
     },
     bar:{
-        position:'absolute', 
+        position:'absolute',
+        color:'red', 
         bottom:10,
         display: 'flex',
         flex: 1,
