@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Switch, Text, Image, ImageBackground} from 'react-native';
+import { View, StyleSheet, Switch, Text, Image, ImageBackground, ScrollView} from 'react-native';
 import NavBar from './NavBar'
 import { Audio } from 'expo-av';
 import { Ionicons } from '@expo/vector-icons';
@@ -27,24 +27,27 @@ playSound = async () => {
     <View style={{ width:'100%',height:'100%' }}>
       <ImageBackground source={Background} style={{width: '100%', height: '100%'}}>
         <NavBar title='Breathing' navigation = {props.navigation }/>
-        <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-          <TouchableOpacity>
-            <Ionicons name="md-play" size={60} color="white" style={styles.button} />
-          </TouchableOpacity>
-          <Image source={{uri: 'https://media.giphy.com/media/krP2NRkLqnKEg/giphy.gif'}} style={styles.gif} />
-        </View>
 
-      <CountDown
-        until={120}
-        size={20}
-        onFinish={() => alert('Breathing Complete, Good Job!')}
-        digitStyle={{backgroundColor: '#A2C8C8'}}
-        digitTxtStyle={{color: '#FFF'}}
-        timeLabelStyle = {{color: '#FFF'}}
-        timeToShow={['M', 'S']}
-        timeLabels={{m: 'Min', s: 'Sec'}}
-      />
-        </ImageBackground>
+
+          <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+            <TouchableOpacity>
+              <Ionicons name="md-play" size={60} color="white" style={styles.button} />
+            </TouchableOpacity>
+            <Image source={{uri: 'https://media.giphy.com/media/krP2NRkLqnKEg/giphy.gif'}} style={styles.gif} />
+          </View>
+
+        <CountDown
+          until={120}
+          size={20}
+          onFinish={() => alert('Breathing Complete, Good Job!')}
+          digitStyle={{backgroundColor: '#A2C8C8'}}
+          digitTxtStyle={{color: '#FFF'}}
+          timeLabelStyle = {{color: '#FFF'}}
+          timeToShow={['M', 'S']}
+          timeLabels={{m: 'Min', s: 'Sec'}}
+          />
+
+      </ImageBackground>
     </View>
     )
        

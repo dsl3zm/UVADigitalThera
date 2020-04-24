@@ -10,7 +10,7 @@ export default function HomeMap(props){
 
 
     return(
-        <View style={{ width:'100%',height:'120%' }}>
+        <View style={{ width:'100%',height:'100%' }}>
         <NavBar title='Map' navigation = {props.navigation }/>
         <Map/>
     </View>
