@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Switch, Text, Image, ImageBackground, ScrollView} from 'react-native';
 import NavBar from './NavBar'
-import { Audio } from 'expo-av';
 import { Ionicons } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import CountDown from 'react-native-countdown-component';
 import Background from '../assets/calm_water.jpg';
+import { Audio } from 'expo-av';
 
 export default function Breathe(props){
 
