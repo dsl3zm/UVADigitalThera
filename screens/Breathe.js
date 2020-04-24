@@ -29,17 +29,18 @@ playSound = async () => {
         <NavBar title='Breathing' navigation = {props.navigation }/>
         <View style={{ justifyContent: 'center', alignItems: 'center' }}>
           <TouchableOpacity>
-            <Ionicons name="md-play" size={60} color="black" style={styles.button} />
+            <Ionicons name="md-play" size={60} color="white" style={styles.button} />
           </TouchableOpacity>
           <Image source={{uri: 'https://media.giphy.com/media/krP2NRkLqnKEg/giphy.gif'}} style={styles.gif} />
         </View>
 
       <CountDown
         until={120}
-        size={30}
-        onFinish={() => alert('Breathing Complete')}
+        size={20}
+        onFinish={() => alert('Breathing Complete, Good Job!')}
         digitStyle={{backgroundColor: '#A2C8C8'}}
         digitTxtStyle={{color: '#FFF'}}
+        timeLabelStyle = {{color: '#FFF'}}
         timeToShow={['M', 'S']}
         timeLabels={{m: 'Min', s: 'Sec'}}
       />
@@ -59,10 +60,8 @@ const styles = StyleSheet.create({
     borderRadius: 16,
 
   },
-    
   button: {
-    paddingBottom: 60
-
+    paddingBottom: 40
   }
 
 });
