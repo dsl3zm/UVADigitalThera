@@ -82,7 +82,7 @@ export default class NotificationStruct extends React.Component {
       {
         title: "Breathing",
         body: 'Time to do your breathing exercise!',
-      },
+      }, //86400000
       {
         repeat: 'day',
         time: new Date().getTime() + 86400000,
@@ -103,8 +103,8 @@ export default class NotificationStruct extends React.Component {
           <Title></Title>
           <Paragraph></Paragraph>
         </View>
-        <Button mode='outlined' onPress={() => this.scheduleNotification}> Set breathing reminder </Button>
-        <Button mode='outlined' onPress={() => Notifications.cancelAllScheduledNotificationsAsync}> Press to cancel notifications </Button>
+        <Button mode='outlined' onPress={() => this.scheduleNotification()}> Set breathing reminder </Button>
+        <Button mode='outlined' onPress={() => Notifications.cancelAllScheduledNotificationsAsync()}> Press to cancel notifications </Button>
       </View>
     );
   }
