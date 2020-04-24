@@ -77,6 +77,19 @@ export default class NotificationStruct extends React.Component {
       body: JSON.stringify(message),
     });
   };
+  scheduleNotification = async () => {
+    let notificationId = Notifications.scheduleLocalNotificationAsync(
+      {
+        title: "Breathing",
+        body: 'Time to do your breathing exercise!',
+      },
+      {
+        repeat: 'day',
+        time: new Date().getTime() + 86400000,
+      },
+    );
+    
+  }; //console.log(notificationId);
 
   render() {
     return (
@@ -87,14 +100,20 @@ export default class NotificationStruct extends React.Component {
           justifyContent: 'space-around',
         }}>
         <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-          <Title>Status: {this.state.notification.origin}</Title>
-          <Paragraph>Data: {JSON.stringify(this.state.notification.data)}</Paragraph>
+          <Title></Title>
+          <Paragraph></Paragraph>
         </View>
-        <Button mode='outlined' onPress={() => this.sendPushNotification()}> Press to send reminder </Button>
+        <Button mode='outlined' onPress={() => this.scheduleNotification}> Set breathing reminder </Button>
+        <Button mode='outlined' onPress={() => Notifications.cancelAllScheduledNotificationsAsync}> Press to cancel notifications </Button>
       </View>
     );
   }
 }
+
+//          <Title>Status: {this.state.notification.origin}</Title>
+//          <Paragraph>Data: {JSON.stringify(this.state.notification.data)}</Paragraph>
+//
+//this.sendPushNotification()`
 
 /*  TO GET PUSH RECEIPTS, RUN THE FOLLOWING COMMAND IN TERMINAL, WITH THE RECEIPTID SHOWN IN THE CONSOLE LOGS
 
