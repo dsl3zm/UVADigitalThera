@@ -6,14 +6,10 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import CountDown from 'react-native-countdown-component';
 import Background from '../assets/calm_water.jpg';
 import { Audio } from 'expo-av';
+import BreatheCo from '../components/BreatheCo';
 
 export default function Breathe(props){
 
-const soundObject = new Audio.Sound();
-playSound = async () => {
-  await soundObject.loadAsync(require('../assets/music1.mp3'));
-  soundObject.playAsync();
-}
 // try {
 //   await soundObject.loadAsync(require('./assets/music1.mp3'));
 //   await soundObject.playAsync();
@@ -30,9 +26,7 @@ playSound = async () => {
 
 
           <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-            <TouchableOpacity>
-              <Ionicons name="md-play" size={60} color="white" style={styles.button} />
-            </TouchableOpacity>
+            <BreatheCo></BreatheCo>
             <Image source={{uri: 'https://media.giphy.com/media/krP2NRkLqnKEg/giphy.gif'}} style={styles.gif} />
           </View>
 
