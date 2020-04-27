@@ -20,6 +20,7 @@ export default class BreatheCo extends React.Component {
       isPlaying: false,
       isBuffering: false,
       isLoading: true,
+      button: "md-play",
     };
   }
   componentDidMount() {
@@ -37,7 +38,7 @@ export default class BreatheCo extends React.Component {
 
 
   async _loadNewPlaybackInstance(playing) {
-    console.log("hello");
+    //console.log("hello");
     if (this.playbackInstance != null) {
         await this.playbackInstance.unloadAsync();
         this.playbackInstance.setOnPlaybackStatusUpdate(null);
@@ -63,9 +64,15 @@ export default class BreatheCo extends React.Component {
 //  Save the response of sound in playbackInstance
     this.playbackInstance = sound;
 //  Make the loop of Audio
-    this.playbackInstance.setIsLoopingAsync(true);
+    this.playbackInstance.setIsLoopingAsync(false);
 //  Play the Music
-    this.playbackInstance.playAsync();
+    if(true) {
+        console.log("secret");
+        this.playbackInstance.pauseAsync();
+    }
+    else {
+        this.playbackInstance.pauseAsync();
+    }
 }
   _onPlaybackStatusUpdate = status => {
     console.log(status);
@@ -96,13 +103,18 @@ export default class BreatheCo extends React.Component {
     this._loadNewPlaybackInstance(playing, this.props.playingTrack.previewURL);
   }
   _onPlayPausePressed = () => {
-    console.log('tooggle pressplaypause');
-    console.log(this.playbackInstance);
+    //console.log(this.state.isPlaying);
+    //console.log(this.playbackInstance);
     if (this.playbackInstance != null) {
       if (this.state.isPlaying) {
         this.playbackInstance.pauseAsync();
+        this.state.isPlaying = false
+        this.state.button = "md-play"
       } else {
         this.playbackInstance.playAsync();
+        this.state.isPlaying = true
+        this.state.button = "md-pause"
+        console.log(this.state.button)
       }
     }
   };
@@ -114,30 +126,21 @@ export default class BreatheCo extends React.Component {
   };
   
 
-    playSound = async () => {
-
-        await Expo.Audio.setIsEnabledAsync(true);
-        const sound = new Audio.Sound();
-        await sound.loadAsync(require('../assets/music1.mp3'));
-        await sound.playAsync();
-        console.log("success");
-        sound.playAsync();
-        sound.replayAsync();
-        
-      };
       render() {
-        return(
-        <TouchableOpacity>
-          <Ionicons 
-            name="md-play" 
-            size={60} 
-            color="white" 
-            style={styles.button}
-            onPress={this._loadNewPlaybackInstance}
-          />
-        </TouchableOpacity>
-        )
-      }
+            return(
+                <TouchableOpacity>
+        
+                  <Ionicons 
+                    name = { this.state.button }
+                    size = {60} 
+                    color = "white" 
+                    style = {styles.button}
+                    onPress = {this._onPlayPausePressed}
+                  />
+                </TouchableOpacity>
+            )
+
+        }
 }
 const styles = StyleSheet.create({
 

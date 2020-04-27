@@ -13,7 +13,7 @@ export default function NavBar(props){
            name={Platform.select({
             ios: 'ios-menu',
             android: 'md-menu',
-            })} color="white" size={50} style={styles.icon}  onPress={() => props.navigation.openDrawer()}/>
+            })} color="black" size={50} style={styles.icon}  onPress={() => props.navigation.openDrawer()}/>
            <Text style={styles.title}>{props.title}</Text>
            {/* <Button title="Toggle drawer" onPress={() => navigation.toggleDrawer()} /> */}
        </View>
@@ -24,7 +24,7 @@ export default function NavBar(props){
 const styles = StyleSheet.create({
 
     container: {
-        backgroundColor: '#0000FF',
+        //backgroundColor: '#00FFFF',
         color: 'white',
         width: Dimensions.get('window').width,
         height: Dimensions.get('window').height/7.5,
